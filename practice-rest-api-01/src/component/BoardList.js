@@ -12,8 +12,13 @@ const BoardList = () => {
     axios
       .get("http://khdsa1.iptime.org:18080" + "/board") //get방식
       .then((res) => {
-        console.log(res.data);
-        setBoardList(res.data.data);
+        if (res.data.data === null) {
+          console.log(res.data);
+          alert("게시글 조회 실패");
+        } else {
+          console.log(res.data);
+          setBoardList(res.data.data);
+        }
       })
       .catch((res) => {
         console.log(res.data);

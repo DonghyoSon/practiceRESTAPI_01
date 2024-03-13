@@ -17,8 +17,13 @@ const BoardView = (props) => {
     axios
       .get("http://khdsa1.iptime.org:18080" + "/board" + "/" + boardNo) //get방식
       .then((res) => {
-        console.log(res.data);
-        setBoard(res.data.data);
+        if (res.data.data === null) {
+          console.log(res.data);
+          alert("게시글 조회 실패");
+        } else {
+          console.log(res.data);
+          setBoard(res.data.data);
+        }
       })
       .catch((res) => {
         console.log(res.data);
