@@ -1,0 +1,73 @@
+/*게시글 목록*/
+table {
+  border-collapse: collapse;
+  border-bottom: 1px solid #939393;
+  margin-bottom: 5px;
+  width: 400px;
+}
+thead th {
+  border-bottom: 1px solid #939393;
+  padding: 5px;
+}
+tbody td {
+  padding: 5px;
+}
+tbody tr > :nth-child(2):hover {
+  cursor: pointer;
+}
+
+/*게시글 상세보기*/
+.boardTitle {
+  text-align: center;
+  border-bottom: 1px solid #939393;
+}
+.regDate,
+.boardWriter {
+  text-align: right;
+  font-size: small;
+  padding: 0;
+}
+.boardContent {
+  padding: 10px;
+}
+
+/*게시글 작성*/
+.titleArea {
+  border-bottom: 1px solid #939393;
+}
+.contentArea {
+  border-bottom: 1px solid #939393;
+}
+.writerArea {
+  padding: 0;
+  text-align: right;
+}
+.writerArea-input {
+  font-size: 0.5em;
+  margin-bottom: 5px;
+  text-align: right;
+}
+input {
+  border: none;
+  width: 400px;
+}
+input:focus {
+  outline: none;
+}
+textarea {
+  outline: none;
+  border: none;
+  resize: none;
+  width: 400px;
+  height: 200px;
+}
+
+/*버튼*/
+button {
+  background-color: #fff;
+  border: 1px solid #939393;
+  margin-right: 5px;
+}
+button:hover {
+  cursor: pointer;
+}
