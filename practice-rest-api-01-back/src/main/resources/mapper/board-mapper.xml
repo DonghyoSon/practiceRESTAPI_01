@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="pracitce.rest.api.board.model.dao.BoardDao">
+<mapper namespace="practice.rest.api.board.model.dao.BoardDao">
 
 	<!-- 게시글 등록 -->
 	<insert id="insertBoard">
@@ -8,10 +8,10 @@
 	</insert> 
 	
 	<!-- 게시글 목록 출력 -->
-	<select id="boardList">
+	<select id="boardList" resultType="board">
 		select board_no, board_title, board_writer, reg_date
 		from board_tbl
-		order by board_no desc;
+		order by board_no desc
 	</select>
 	
 	<!-- 게시글 상세 보기 -->
@@ -26,6 +26,6 @@
 	
 	<!-- 게시글 수정 -->
 	<update id="boardModify">
-		update board_tbl set board_title=#{boardTitle}, board_content=#{boardContent} where board_no={#boardNo}
+		update board_tbl set board_title=#{boardTitle}, board_content=#{boardContent} where board_no=#{boardNo}
 	</update>
 </mapper>

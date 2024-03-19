@@ -36,6 +36,7 @@ public class BoardService {
 
 	//게시글 수정
 	public int boardModify(Board modifiedBoard) {
+		System.out.println(modifiedBoard);
 		return boardDao.boardModify(modifiedBoard);
 	}
 }

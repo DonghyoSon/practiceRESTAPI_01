@@ -15,14 +15,15 @@ const BoardView = (props) => {
   //게시글 번호를 서버로 전달하여 해당 글을 가져옴
   useEffect(() => {
     axios
-      .get("http://khdsa1.iptime.org:18080" + "/board" + "/" + boardNo) //get방식
+      .get("/board" + "/" + boardNo) //.get("http://khdsa1.iptime.org:18080" + "/board" + "/" + boardNo)
       .then((res) => {
-        if (res.data.data === null) {
+        if (res.data === null) {
+          //if (res.data.data === null)
           console.log(res.data);
           alert("게시글 조회 실패");
         } else {
           console.log(res.data);
-          setBoard(res.data.data);
+          setBoard(res.data); //setBoard(res.data.data);
         }
       })
       .catch((res) => {
@@ -45,7 +46,7 @@ const BoardView = (props) => {
   const boardDelete = () => {
     if (window.confirm("게시글을 삭제하시겠습니까?")) {
       axios
-        .delete("http://khdsa1.iptime.org:18080" + "/board" + "/" + boardNo)
+        .delete("/board" + "/" + boardNo) //.delete("http://khdsa1.iptime.org:18080" + "/board" + "/" + boardNo)
         .then((res) => {
           console.log(res.data);
           alert("삭제가 완료되었습니다.");

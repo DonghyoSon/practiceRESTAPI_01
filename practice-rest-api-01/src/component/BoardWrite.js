@@ -13,7 +13,7 @@ const BoardWrite = () => {
     const board = { boardTitle, boardContent, boardWriter };
 
     axios
-      .post("http://khdsa1.iptime.org:18080" + "/board", board) //post방식
+      .post("/board", board) //.post("http://khdsa1.iptime.org:18080" + "/board", board)
       .then((res) => {
         console.log(res.data);
         alert("게시글 등록 완료");

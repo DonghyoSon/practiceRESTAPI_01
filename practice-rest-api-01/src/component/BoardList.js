@@ -10,14 +10,15 @@ const BoardList = () => {
   //백엔드에 게시글 목록 조회 요청
   useEffect(() => {
     axios
-      .get("http://khdsa1.iptime.org:18080" + "/board") //get방식
+      .get("/board") //.get("http://khdsa1.iptime.org:18080" + "/board")
       .then((res) => {
-        if (res.data.data === null) {
+        if (res.data === null) {
+          //if (res.data.data === null)
           console.log(res.data);
           alert("게시글 조회 실패");
         } else {
           console.log(res.data);
-          setBoardList(res.data.data);
+          setBoardList(res.data); //setBoardList(res.data.data);
         }
       })
       .catch((res) => {
@@ -61,6 +62,8 @@ const BoardList = () => {
 const BoardListObj = (props) => {
   const boardList = props.boardList;
   const navigate = useNavigate();
+
+  console.log(boardList);
 
   //게시글 상세보기로 이동하는 함수
   const toBoardView = () => {

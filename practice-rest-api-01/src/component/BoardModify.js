@@ -18,7 +18,7 @@ const BoardModify = () => {
     const modifiedBoard = { boardNo, boardTitle, boardContent, boardWriter };
 
     axios
-      .patch("http://khdsa1.iptime.org:18080" + "/board", modifiedBoard)
+      .patch("/board", modifiedBoard) //.patch("http://khdsa1.iptime.org:18080" + "/board", modifiedBoard)
       .then((res) => {
         console.log(res.data);
         alert("게시글 수정이 완료되었습니다.");
