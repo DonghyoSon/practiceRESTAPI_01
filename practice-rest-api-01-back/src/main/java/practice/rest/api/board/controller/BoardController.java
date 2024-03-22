@@ -3,6 +3,7 @@ package practice.rest.api.board.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
@@ -22,6 +23,7 @@ import practice.rest.api.board.model.vo.Board;
 import response.ResponseDTO;
 
 @Tag(name = "Board API", description = "")
+@CrossOrigin("*")
 @RestController
 @RequestMapping(value="/board")
 public class BoardController {
@@ -39,13 +41,13 @@ public class BoardController {
 		ResponseDTO response = new ResponseDTO();
 		
 		if(result == 0) {
-			response.setMessage("게시글 등록을 실패하였습니다.");
-			response.setData(0);
+			response.setMessage("Fail");
+//			response.setData(0);
 			
 			return response;
 		}else {
-			response.setMessage("게시글 등록을 완료하였습니다.");
-			response.setData(1);
+			response.setMessage("Success");
+//			response.setData(1);
 			
 			return response;
 		}
@@ -60,12 +62,12 @@ public class BoardController {
 		ResponseDTO response = new ResponseDTO();
 		
 		if(boardList == null) {
-			response.setMessage("조회된 게시글이 없습니다.");
+			response.setMessage("Fail");
 			response.setData(null);
 			
 			return response;
 		}else {
-			response.setMessage("등록된 게시글 목록을 조회합니다.");
+			response.setMessage("Success");
 			response.setData(boardList);
 			
 			return response;
@@ -81,12 +83,12 @@ public class BoardController {
 		ResponseDTO response = new ResponseDTO();
 		
 		if(board == null) {
-			response.setMessage("조회된 게시글이 없습니다.");
+			response.setMessage("Fail");
 			response.setData(null);
 			
 			return response;
 		}else {
-			response.setMessage("게시글이 조회 되었습니다.");
+			response.setMessage("Success");
 			response.setData(board);
 			
 			return response;
@@ -103,13 +105,13 @@ public class BoardController {
 		ResponseDTO response = new ResponseDTO();
 		
 		if(result == 0) {
-			response.setMessage("게시글 삭제를 실패하였습니다.");
-			response.setData(0);
+			response.setMessage("Fail");
+//			response.setData(0);
 			
 			return response;
 		}else {
-			response.setMessage("게시글 삭제를 완료하였습니다.");
-			response.setData(1);
+			response.setMessage("Success");
+//			response.setData(1);
 			
 			return response;
 		}
@@ -124,13 +126,13 @@ public class BoardController {
 		ResponseDTO response = new ResponseDTO();
 		
 		if(result == 0) {
-			response.setMessage("게시글 수정을 실패하였습니다.");
-			response.setData(0);
+			response.setMessage("Fail");
+//			response.setData(0);
 			
 			return response;
 		}else {
-			response.setMessage("게시글 수정을 완료하였습니다.");
-			response.setData(1);
+			response.setMessage("Success");
+//			response.setData(1);
 			
 			return response;
 		}
