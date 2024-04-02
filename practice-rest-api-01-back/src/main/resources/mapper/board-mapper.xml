@@ -8,10 +8,23 @@
 	</insert> 
 	
 	<!-- 게시글 목록 출력 -->
-	<select id="boardList" resultType="board">
+	<!-- <select id="boardList" resultType="board">
 		select board_no, board_title, board_writer, reg_date
 		from board_tbl
 		order by board_no desc
+	</select> -->
+	<!-- 게시글 목록 출력(페이지 기능 포함) -->
+	<!-- 전체 게시물 수 -->
+	<select id="totalCount" resultType="int">
+		select count(*) from board_tbl
+	</select>
+	<select id="boardList" resultType="board">
+		select * from 
+			(select rownum as rnum, b.* from
+				(select board_no, board_title, board_content, board_writer, reg_date
+					from board_tbl
+					order by board_no desc)b) 
+		where rnum between #{start} and #{end}
 	</select>
 	
 	<!-- 게시글 상세 보기 -->

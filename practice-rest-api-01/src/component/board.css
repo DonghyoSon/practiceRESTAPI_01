@@ -1,4 +1,8 @@
 /*게시글 목록*/
+.whole-rap {
+  width: 500px;
+}
+
 table {
   border-collapse: collapse;
   border-bottom: 1px solid #939393;
@@ -69,5 +73,28 @@ button {
   margin-right: 5px;
 }
 button:hover {
+  cursor: pointer;
+}
+
+/*페이지 기능*/
+.pagenation {
+  margin-top: 5px;
+  text-align: center;
+}
+.material-symbols-outlined:hover {
+  cursor: pointer;
+  color: #939393;
+}
+.active-pageNo {
+  margin: 0 15px;
+  font-weight: bold;
+  color: #939393;
+}
+.nonActive-pageNo {
+  margin: 0 15px;
+  font-weight: bold;
+}
+.nonActive-pageNo:hover {
+  color: #939393;
   cursor: pointer;
 }
